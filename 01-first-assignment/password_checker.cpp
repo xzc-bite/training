@@ -34,18 +34,13 @@ bool check_password(const std::string& first_name,
                     const std::string& password) {
     // 修复 2：原来是 password.size() <= 10（至多 10），方向写反了，
     bool length_ok = password.size() >= 10;
-
-
     // 修复 3：原来是 contains_between(password, 0, 9)，
     bool upper_ok = contains_between(password, 'A', 'Z');
     bool lower_ok = contains_between(password, 'a', 'z');
     bool digit_ok = contains_between(password, '0', '9');
-
-    // find 找不到子串时返回 npos，名和姓都找不到（== npos）才通过。
-    // find 本身区分大小写，"john" 不会匹配 "John"。
     bool name_ok = password.find(first_name) == std::string::npos &&
                    password.find(last_name) == std::string::npos;
-    // 清理：删除了无用的 int checked = 0;（从未被使用）
+    // 清理：删除了无用的 int checked = 0;
     return length_ok && upper_ok && lower_ok && digit_ok && name_ok;
 }
 
