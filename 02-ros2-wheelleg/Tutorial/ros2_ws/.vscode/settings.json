@@ -1,0 +1,5 @@
+{
+    "cmake.sourceDirectory": "/home/kevin/venow_cpp_basics/training/02-ros2-wheelleg/Tutorial/ros2_ws/src/rm_msgs",
+    "python-envs.defaultEnvManager": "ms-python.python:conda",
+    "python-envs.defaultPackageManager": "ms-python.python:conda"
+}
